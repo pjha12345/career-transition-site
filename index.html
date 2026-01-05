@@ -1,70 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Career & Transition Coaching</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-      background: white;
-    }
-    h1 {
-      font-size: 36px;
-    }
-    h2 {
-      margin-top: 30px;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 14px 24px;
-      background: black;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 12px;
-      color: gray;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Career & Transition Coaching</h1>
-    <p>
-      Helping professionals navigate career changes, financial decisions,
-      and US–India transitions with clarity and confidence.
-    </p>
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
-    <h2>What I Help With</h2>
-    <ul>
-      <li>Career transition & late-career security</li>
-      <li>US–India relocation & retirement planning</li>
-      <li>Mortgage and financial decision clarity</li>
-    </ul>
+export default function SideIncomeSite() {
+  return (
+    <div className="min-h-screen bg-gray-50 p-6">
+      <div className="max-w-5xl mx-auto space-y-10">
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }} 
+          animate={{ opacity: 1, y: 0 }} 
+          className="text-4xl font-bold text-center"
+        >
+          Career & Transition Coaching
+        </motion.h1>
 
-    <h2>Book a Paid Session</h2>
-    <p>$150 / 60 minutes • Zoom • Practical & confidential</p>
+        <p className="text-center text-lg text-gray-600">
+          Helping professionals transition careers, plan global moves, and build financial confidence
+        </p>
 
-    <a class="btn" href="#">
-      Request a Session
-    </a>
+        <div className="grid md:grid-cols-3 gap-6">
+          <Card className="rounded-2xl shadow-md">
+            <CardContent className="p-6 space-y-3">
+              <h2 className="text-xl font-semibold">Career Transition</h2>
+              <p className="text-gray-600">1:1 guidance for role changes, layoffs, and late-career security planning.</p>
+            </CardContent>
+          </Card>
 
-    <footer>
-      Consulting services provided through LLC.  
-      Not financial or legal advice.
-    </footer>
-  </div>
-</body>
-</html>
+          <Card className="rounded-2xl shadow-md">
+            <CardContent className="p-6 space-y-3">
+              <h2 className="text-xl font-semibold">US–India Relocation</h2>
+              <p className="text-gray-600">Practical advice on taxes, housing, lifestyle, and remote work.</p>
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl shadow-md">
+            <CardContent className="p-6 space-y-3">
+              <h2 className="text-xl font-semibold">Financial Clarity</h2>
+              <p className="text-gray-600">Cash flow, mortgage decisions, and retirement runway planning.</p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="text-center space-y-4">
+          <h3 className="text-2xl font-semibold">Book a Paid Session</h3>
+          <p className="text-gray-600">$150 / 60 minutes • Zoom • Action-oriented</p>
+          <Button className="px-8 py-4 text-lg rounded-2xl">Request a Session</Button>
+        </div>
+
+        <footer className="text-center text-sm text-gray-500 pt-10">
+          © 2026 Independent Consulting • Not financial or legal advice
+        </footer>
+      </div>
+    </div>
+  );
+}
